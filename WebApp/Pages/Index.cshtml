@@ -1,0 +1,24 @@
+﻿@page
+@using CancelDemoBlazor.Shared;
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    if (ViewData["WeatherForecastData"] == null){
+        ViewData["WeatherForecastData"] = new WeatherForecast[0];
+    }
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form method="post">
+        <p>
+            <input type="submit" value="Refresh" asp-page-handler="Refresh" />
+            <input type="submit" value="Cancel" asp-page-handler="Cancel" />
+        </p>
+    </form>
+    @foreach (var forecast in (IEnumerable<WeatherForecast>)ViewData["WeatherForecastData"]!)
+    {
+        <p>The forecast for @forecast.Date is @forecast.Summary!</p>
+    }
+</div>

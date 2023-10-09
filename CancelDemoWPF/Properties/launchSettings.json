@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CancelDemoWPF": {
+      "commandName": "Project",
+      "hotReloadEnabled": false
+    }
+  }
+}
