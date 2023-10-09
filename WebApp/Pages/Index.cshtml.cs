@@ -38,7 +38,6 @@ namespace WebApp.Pages
             _requestTask = null;
 
             ViewData["WeatherForecastData"] = forecasts;
-            //StateHasChanged();
 
             return Page();
         }

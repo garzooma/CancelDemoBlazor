@@ -33,9 +33,9 @@ namespace CancelDemoBlazor.Server.Controllers
             for (int i = 1; i <= count; i++)
             {
                 Debug.WriteLine($"Iter #{i}");
-                if (cancel) // (cancellationToken.IsCancellationRequested)
+                if (cancel)
                 {
-                    Debug.WriteLine("Cancelled");
+                    Debug.WriteLine("Cancelled on server");
                     throw new Exception($"Canceled after {i} forecast items");
                 }
                 await Task.Delay(1000);
